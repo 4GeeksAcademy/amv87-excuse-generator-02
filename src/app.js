@@ -1,9 +1,8 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector("#excuse").innerHTML = generateExcuse();
+  document.querySelector("#excuse").innerHTML = theExcuse;
 };
 
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
@@ -21,18 +20,11 @@ function bringPosition(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-let generateExcuse = () => {
-  let whoRandom = bringPosition(who);
-  let actionRandom = bringPosition(action);
-  let whatRandom = bringPosition(what);
-  let whenRandom = bringPosition(when);
-  return (
-    who[whoRandom] +
-    " " +
-    action[actionRandom] +
-    " " +
-    what[whatRandom] +
-    " " +
-    when[whenRandom]
-  );
-};
+let theExcuse =
+  who[bringPosition(who)] +
+  " " +
+  action[bringPosition(action)] +
+  " " +
+  what[bringPosition(what)] +
+  " " +
+  when[bringPosition(when)];
