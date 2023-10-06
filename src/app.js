@@ -2,7 +2,7 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector("#excuse").innerHTML = theExcuse;
+  document.querySelector("#excuse").innerHTML = createExcuse;
 };
 
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
@@ -16,15 +16,10 @@ let when = [
   "while I was praying"
 ];
 
-function bringPosition(array) {
-  return Math.floor(Math.random() * array.length);
+function getElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-let theExcuse =
-  who[bringPosition(who)] +
-  " " +
-  action[bringPosition(action)] +
-  " " +
-  what[bringPosition(what)] +
-  " " +
-  when[bringPosition(when)];
+let createExcuse = `${getElement(who)} ${getElement(action)} ${getElement(
+  what
+)} ${getElement(when)}`;
